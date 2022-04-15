@@ -77,7 +77,7 @@ interface CourseGoal{
     description: string;
     completionDate : Date;
 }
-
+ 
 function createCourseGoal(title: string, description: string, date: Date): CourseGoal{
     let goal: Partial<CourseGoal> = {};
     goal.completionDate=date;
