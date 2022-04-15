@@ -86,3 +86,25 @@ function createCourseGoal(title: string, description: string, date: Date): Cours
     return goal as CourseGoal;
 }
 
+
+//DECORATORS
+function Logger(logString: string){
+    return (constructor:Function)=>{
+        console.log(logString);
+        console.log(constructor);
+    }
+}
+
+@Logger('Something really cool')
+class Person{
+    name: string;
+    age: number;
+
+    constructor(name: string, age: number){
+        this.name=name;
+        this.age=age;
+    }
+}
+
+let person = new Person('Robin', 25);
+console.log(person);
